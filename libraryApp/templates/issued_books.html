@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Character encoding -->
+    <meta charset="UTF-8">
+
+    <!-- Page title -->
+    <title>SmartLibrary - Issued Books</title>
+
+    <!-- AUTO REFRESH EVERY 10 SECONDS -->
+    <!-- This reloads the page automatically to update data -->
+    <meta http-equiv="refresh" content="10">
+
+    <style>
+        /* Page styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f4f4f4;
+        }
+
+        /* Center heading */
+        h2 {
+            text-align: center;
+        }
+
+        /* Main container */
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        /* Link styling */
+        a {
+            text-decoration: none;
+            margin-right: 10px;
+        }
+
+        /* Table styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        /* Table borders */
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+
+        /* Table header */
+        th {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+        }
+
+        /* Table cells */
+        td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        /* Button styling */
+        .btn {
+            padding: 6px 12px;
+            color: white;
+            border-radius: 4px;
+            display: inline-block;
+        }
+
+        /* Return button */
+        .return {
+            background-color: green;
+        }
+
+        /* Hover effect */
+        .return:hover {
+            background-color: darkgreen;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Page heading -->
+    <h2>📚 Issued Books</h2>
+
+    <!-- Navigation -->
+    <div>
+        <a href="/">⬅ Back to Home</a>
+    </div>
+
+    <!-- Table to display issued books -->
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Book</th>
+                <th>User</th>
+                <th>Issued Date</th>
+                <th>Due Date</th>
+                <th>Return Date</th>
+                <th>Late Days</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <!-- Loop through all issued books -->
+            {% for issue in issues %}
+            <tr>
+                <td>{{ issue.id }}</td>
+                <td>{{ issue.book.title }}</td>
+                <td>{{ issue.user_name }}</td>
+
+                <!-- Format dates -->
+                <td>{{ issue.issued_date|date:"Y-m-d" }}</td>
+                <td>{{ issue.due_date|date:"Y-m-d" }}</td>
+
+                <!-- Show return date if available -->
+                <td>
+                    {% if issue.return_date %}
+                        {{ issue.return_date|date:"Y-m-d" }}
+                    {% else %}
+                        -
+                    {% endif %}
+                </td>
+
+                <!-- Calculate late days using model function -->
+                <td>
+                    {% with ld=issue.late_days %}
+                        {% if ld == 0 %}
+                            On Time
+                        {% else %}
+                            {{ ld }} days late
+                        {% endif %}
+                    {% endwith %}
+                </td>
+
+                <!-- Show current status -->
+                <td>
+                    {% if issue.returned %}
+                        Returned
+                    {% else %}
+                        Issued
+                    {% endif %}
+                </td>
+
+                <!-- Return button (only if not returned) -->
+                <td>
+                    {% if not issue.returned %}
+                        <a href="/return/{{ issue.id }}/" class="btn return">Return</a>
+                    {% else %}
+                        -
+                    {% endif %}
+                </td>
+            </tr>
+
+            <!-- If no data found -->
+            {% empty %}
+            <tr>
+                <td colspan="9">No issued books found</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+
+</body>
+</html>

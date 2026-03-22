@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Title shown in browser tab -->
+    <title>SmartLibrary - Edit Book</title>
+
+    <style>
+        /* Page styling */
+        body {
+            font-family: Arial;
+            margin: 40px;
+            background-color: #f4f4f4;
+        }
+
+        /* Center heading */
+        h2 {
+            text-align: center;
+        }
+
+        /* Main container */
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            width: 500px;
+            margin: auto;   /* center horizontally */
+        }
+
+        /* Link styling */
+        a {
+            text-decoration: none;
+            margin-right: 10px;
+        }
+
+        /* Table styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        /* Table borders */
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+
+        /* Table header */
+        th {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+        }
+
+        /* Table cells */
+        td {
+            padding: 10px;
+        }
+
+        /* Input fields */
+        input {
+            width: 100%;
+            padding: 8px;
+        }
+
+        /* Button styling */
+        .btn {
+            padding: 8px 15px;
+            color: white;
+            border-radius: 0;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Update button color */
+        .update {
+            background-color: green;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Page heading -->
+    <h2>✏️ Edit Book</h2>
+
+    <!-- Back navigation -->
+    <div>
+        <a href="/">⬅ Back to Home</a>
+    </div>
+
+    <!-- Form to update book details -->
+    <form method="post">
+
+        <!-- CSRF token for security -->
+        {% csrf_token %}
+
+        <!-- Table layout for form -->
+        <table>
+            <tr>
+                <th>Field</th>
+                <th>Value</th>
+            </tr>
+
+            <!-- Book title field -->
+            <tr>
+                <td>Book Title</td>
+                <td>
+                    <!-- Pre-filled with existing title -->
+                    <input type="text" name="title" value="{{ book.title }}" required>
+                </td>
+            </tr>
+
+            <!-- Author field -->
+            <tr>
+                <td>Author</td>
+                <td>
+                    <!-- Pre-filled with existing author -->
+                    <input type="text" name="author" value="{{ book.author }}" required>
+                </td>
+            </tr>
+
+            <!-- Submit button -->
+            <tr>
+                <td colspan="2" style="text-align:center;">
+                    <button type="submit" class="btn update">Update Book</button>
+                </td>
+            </tr>
+
+        </table>
+
+    </form>
+
+</div>
+
+</body>
+</html>

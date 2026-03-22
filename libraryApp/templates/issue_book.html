@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Title shown in browser tab -->
+    <title>SmartLibrary - Issue Book</title>
+
+    <style>
+        /* Apply box-sizing to all elements */
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Page styling */
+        body {
+            font-family: Arial;
+            margin: 40px;
+            background-color: #f4f4f4;
+        }
+
+        /* Main container box */
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 0;
+            width: 400px;
+            margin: 70px auto;   /* center horizontally */
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+
+        /* Heading spacing */
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        /* Table styling to show book details */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        /* Table borders */
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+
+        /* Table header */
+        th {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+        }
+
+        /* Table data cells */
+        td {
+            padding: 8px;
+        }
+
+        /* Input field and button styling */
+        input, button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 12px;
+            border: 1px solid #ccc;
+        }
+
+        /* Button styling */
+        button {
+            background-color: green;
+            color: white;
+            border: none;
+            border-radius: 0;
+            cursor: pointer;
+        }
+
+        /* Button hover effect */
+        button:hover {
+            opacity: 0.9;
+        }
+
+        /* Back link styling */
+        a {
+            display: block;
+            margin-top: 15px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Page heading -->
+    <h2>📖 Issue Book</h2>
+
+    <!-- Table to display selected book details -->
+    <table>
+        <tr>
+            <th>Book Name</th>
+            <th>Author</th>
+        </tr>
+        <tr>
+            <!-- Dynamic data from backend -->
+            <td>{{ book.title }}</td>
+            <td>{{ book.author }}</td>
+        </tr>
+    </table>
+
+    <!-- Form to issue the book -->
+    <form method="post">
+
+        <!-- CSRF token for security -->
+        {% csrf_token %}
+
+        <!-- Input for user name -->
+        <input type="text" name="user_name" placeholder="Enter your name" required>
+
+        <!-- Submit button -->
+        <button type="submit">Issue Book</button>
+    </form>
+
+    <!-- Back navigation -->
+    <a href="/">⬅ Back to Home</a>
+
+</div>
+
+</body>
+</html>
