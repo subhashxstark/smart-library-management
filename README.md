@@ -54,8 +54,10 @@ HTML + CSS 🎨
 ---
 ## 📂 Project Structure
 
+```text
 smartLibrary/
-│── libraryApp/
+│
+├── libraryApp/
 │   ├── models.py
 │   ├── views.py
 │   ├── templates/
@@ -65,11 +67,12 @@ smartLibrary/
 │   │   ├── issued_books.html
 │   │   ├── edit_book.html
 │
-│── smartLibrary/
+├── smartLibrary/
 │   ├── settings.py
 │   ├── urls.py
 │
-│── manage.py
+├── manage.py
+```
 
 ## 🔗 Application Routes
 
