@@ -52,6 +52,24 @@ PostgreSQL 🗄️
 HTML + CSS 🎨
 
 ---
+## 📂 Project Structure
+
+smartLibrary/
+│── libraryApp/
+│   ├── models.py
+│   ├── views.py
+│   ├── templates/
+│   │   ├── book_list.html
+│   │   ├── add_book.html
+│   │   ├── issue_book.html
+│   │   ├── issued_books.html
+│   │   ├── edit_book.html
+│
+│── smartLibrary/
+│   ├── settings.py
+│   ├── urls.py
+│
+│── manage.py
 
 ## 🔗 Application Routes
 
