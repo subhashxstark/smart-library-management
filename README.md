@@ -9,7 +9,7 @@ It allows users to manage books, issue and return books, and track due dates whi
 The main focus of this project is to implement clean CRUD operations, business logic for issuing/returning books, and date-based validation such as late return tracking.
 
 ---
-
+``` text
 ## ⚙️ Key Features
 
 📚 Add, view, edit, and delete books
@@ -22,6 +22,7 @@ The main focus of this project is to implement clean CRUD operations, business l
 🧠 Clean structure using Django (models, views, templates, urls)
 🎨 Simple and clean UI using HTML & CSS
 
+```
 ---
 
 ## 🧠 Core Logic (Important)
@@ -45,12 +46,12 @@ This ensures proper tracking of overdue books.
 ---
 
 ## 🛠️ Tech Stack
-
+``` text
 Python 🐍
 Django 🌐
 PostgreSQL 🗄️
 HTML + CSS 🎨
-
+```
 ---
 ## 📂 Project Structure
 
@@ -77,7 +78,7 @@ smartLibrary/
 ## 🔗 Application Routes
 
 ### 📚 Book Management
-
+``` text
 GET `/` → View all books
 GET `/add-book/` → Add new book
 GET `/edit-book/<id>/` → Edit book
@@ -92,6 +93,7 @@ GET `/return/<issue_id>/` → Return book
 
 GET `/issued-books/` → View all issued books
 
+```
 ---
 
 ## ▶️ How to Run the Project
@@ -152,24 +154,24 @@ http://127.0.0.1:8000/
 ---
 
 ## 💡 Key Learnings
-
+``` text
 Implemented real-world library workflow
 Handled CRUD operations in Django
 Applied business logic for availability tracking
 Worked with date/time operations
 Improved debugging and problem-solving skills
 Built structured backend system with UI integration
-
+```
 ---
 
 ## 🚀 Future Improvements
-
+``` text
 🔐 Add authentication (login/signup)
 🔍 Add search functionality
 🌐 Convert to Django REST Framework (API version)
 🎨 Improve UI with Bootstrap
 📈 Add fine calculation system
-
+```
 ---
 
 ## 🙌 Conclusion
