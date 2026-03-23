@@ -211,6 +211,59 @@ Built structured backend system with UI integration
 ```
 ---
 
+## 🐳 Docker Setup
+
+This project is containerized using Docker to ensure consistent environment setup and easy deployment.
+
+### 🔧 Steps Performed
+
+* Created a `Dockerfile` for the Django application
+* Installed required dependencies using `requirements.txt`
+* Configured application to run using **Gunicorn**
+* Exposed application on port **8000**
+
+### ▶️ Run with Docker
+
+```
+docker build -t smartlibrary .
+docker run -d -p 8000:8000 smartlibrary
+```
+
+---
+
+## ☁️ AWS EC2 Deployment
+
+The application is deployed on an AWS EC2 instance and is accessible via public IP.
+
+### 🔧 Deployment Steps
+
+* Launched an Ubuntu EC2 instance
+* Installed Docker and PostgreSQL on the server
+* Configured Security Groups (ports 22 for SSH and 8000 for application)
+* Cloned project from GitHub repository
+* Built Docker image on EC2
+* Ran Docker container in detached mode
+* Connected Django application to PostgreSQL running on EC2
+
+### 🌐 Live Application
+
+```
+http://18.61.83.194:8000
+```
+
+---
+
+## 💡 Deployment Highlights
+
+* Dockerized Django application for portability
+* Deployed on AWS EC2 for public access
+* PostgreSQL used for persistent data storage
+* Application accessible across multiple devices
+* Real-time data updates using centralized database
+
+---
+
+
 ## 🚀 Future Improvements
 ``` text
 🔐 Add authentication (login/signup)
