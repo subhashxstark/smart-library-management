@@ -1,5 +1,8 @@
 # 📚 SmartLibrary – Library Management System (Django)
 
+## 🌐 Live Application 
+http://18.61.83.194:8000
+
 ## 📌 Project Overview
 
 This project is a backend-focused web application built using Django that simulates a real-world library management system.
@@ -125,22 +128,25 @@ smartLibrary/
 ## 🔗 Application Routes
 
 ### 📚 Book Management
-``` text
+
 GET `/` → View all books
+
 GET `/add-book/` → Add new book
+
 GET `/edit-book/<id>/` → Edit book
+
 GET `/delete-book/<id>/` → Delete book
 
 ### 📖 Issue & Return
 
 GET `/issue/<book_id>/` → Issue book
+
 GET `/return/<issue_id>/` → Return book
 
 ### 📊 Issued Books
 
 GET `/issued-books/` → View all issued books
 
-```
 ---
 
 ## ▶️ How to Run the Project
@@ -244,15 +250,7 @@ The application is deployed on an AWS EC2 instance and is accessible via public 
 * Built Docker image on EC2
 * Ran Docker container in detached mode
 * Connected Django application to PostgreSQL running on EC2
-
-### 🌐 Live Application
-
-```
-http://18.61.83.194:8000
-```
-
 ---
-
 ## 💡 Deployment Highlights
 
 * Dockerized Django application for portability
