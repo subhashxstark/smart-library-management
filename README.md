@@ -1,6 +1,6 @@
 # 📚 SmartLibrary – Library Management System (Django)
 
-## 🌐 Live Application 
+**🌐 Live Application:** 
 http://18.61.83.194:8000
 
 ## 📌 Project Overview
@@ -61,7 +61,8 @@ Ensures only available books can be issued through a simple and clear interface.
 Displays all issued books with details such as user name, issue date, due date, and return status.
 Allows users to track issued records and return books through a simple interface.
 
-<img width="1920" height="1020" alt="issued_books" src="https://github.com/user-attachments/assets/2b9fe703-eaa9-424e-aeb7-a19ae0805e11" />
+<img width="1920" height="1020" alt="5_issued_books" src="https://github.com/user-attachments/assets/531e2817-9f3c-4c6e-b837-55cdb802fa1a" />
+
 
 ## 🧠 Core Logic (Important)
 
@@ -93,6 +94,8 @@ Python 🐍
 Django 🌐
 PostgreSQL 🗄️
 HTML + CSS 🎨
+Docker
+AWS EC2
 ```
 ---
 ## 📂 Project Structure
@@ -131,17 +134,23 @@ smartLibrary/
 
 GET `/` → View all books
 
-GET `/add-book/` → Add new book
+GET `/add-book/` → Display form to add a new book
 
-GET `/edit-book/<id>/` → Edit book
+POST `/add-book/` → Add a new book
 
-GET `/delete-book/<id>/` → Delete book
+GET `/edit-book/<book_id>/` → Display edit form
+
+POST `/edit-book/<book_id>/` → Update book details
+
+GET `/delete-book/<book_id>/` → Delete a book
 
 ### 📖 Issue & Return
 
-GET `/issue/<book_id>/` → Issue book
+GET `/issue/<book_id>/` → Display issue page
 
-GET `/return/<issue_id>/` → Return book
+POST `/issue/<book_id>/` → Issue book and mark unavailable
+
+GET `/return/<issue_id>/` → Return book and update status
 
 ### 📊 Issued Books
 
