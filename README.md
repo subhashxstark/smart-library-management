@@ -1,7 +1,7 @@
 # 📚 SmartLibrary – Library Management System (Django)
 
 **🌐 Live Application:** 
-http://18.61.83.194:8000
+http://40.192.34.182:8000
 
 ## 📌 Project Overview
 
