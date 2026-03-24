@@ -103,29 +103,36 @@ AWS EC2
 ```text
 smartLibrary/
 │
-├── screenshots/
+├── libraryApp/                # Main application
+│   ├── migrations/           # Database migrations
+│   ├── templates/            # HTML templates (UI)
+│   ├── __init__.py
+│   ├── admin.py              # Admin configuration
+│   ├── apps.py               # App configuration
+│   ├── models.py             # Database models
+│   ├── tests.py              # Test cases
+│   ├── views.py              # Application logic
+│
+├── screenshots/              # Project UI screenshots
 │   ├── 1_home.png
 │   ├── 2_add_book.png
 │   ├── 3_edit_book.png
 │   ├── 4_issue_book.png
 │   ├── 5_issued_books.png
 │
-├── libraryApp/
-│   ├── models.py
-│   ├── views.py
-│   ├── templates/
-│   │   ├── book_list.html
-│   │   ├── add_book.html
-│   │   ├── issue_book.html
-│   │   ├── issued_books.html
-│   │   ├── edit_book.html
+├── smartLibrary/             # Project configuration
+│   ├── __init__.py
+│   ├── asgi.py               # ASGI config
+│   ├── settings.py           # Project settings
+│   ├── urls.py               # URL routing
+│   ├── wsgi.py               # WSGI config
 │
-├── smartLibrary/
-│   ├── settings.py
-│   ├── urls.py
-│
-├── manage.py
-├── README.md
+├── .dockerignore             # Docker ignore file
+├── .gitignore                # Git ignore file
+├── Dockerfile                # Docker configuration
+├── manage.py                 # Django management script
+├── README.md                 # Project documentation
+├── requirements.txt          # Project dependencies
 ```
 
 ## 🔗 Application Routes
